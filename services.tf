@@ -2,7 +2,7 @@ variable "components" {
   default = ["frontend","mongodb","catalogue","user","cart","redis"]
 }
 
-resource "aws_instance" "components" {
+resource "aws_instance" "instance" {
   ami           = "ami-0b5a2b5b8f2be4ec2"
   instance_type = "t3.micro"
   count = length(var.components)
@@ -27,4 +27,5 @@ variable "records" {
     type    = "A"
     ttl     = 30
     records = [aws_instance.instance[count.index].private_ip]
+
   }
