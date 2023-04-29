@@ -11,7 +11,7 @@ data "aws_security_group" "allow-all" {
   name        = "allow-all"
 
   resource "aws_route53_record" "frontend" {
-    zone_id = 'Z08045122E2EQN1OR1WS6"
+    zone_id = "Z08045122E2EQN1OR1WS6"
     name    = "frontend-dev.pavan345.online"
     type    = "A"
     ttl     = 30
