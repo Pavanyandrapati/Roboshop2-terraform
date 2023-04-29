@@ -8,7 +8,8 @@ resource "aws_instance" "frontend" {
 }
 
 data "aws_security_group" "allow-all" {
-  name        = "allow-all"
+  name = "allow-all"
+}
 
   resource "aws_route53_record" "frontend" {
     zone_id = "Z08045122E2EQN1OR1WS6"
