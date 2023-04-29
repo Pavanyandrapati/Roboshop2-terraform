@@ -7,7 +7,7 @@ resource "aws_instance" "frontend" {
   }
 }
 
-data "aws_security_group" "allow-all" {
+resource "aws_security_group" "allow-all" {
   name = "allow-all"
 }
 
