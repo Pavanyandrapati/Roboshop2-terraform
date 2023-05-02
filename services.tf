@@ -15,27 +15,27 @@ variable "components" {
     frontend={
       name = "frontend"
       instance_type="t3.micro"
-      vpc_security_group_ids = "default"
+      vpc_security_group_ids = "allow-ntg"
     }
     mongodb={
       name = "mongodb"
       instance_type="t3.small"
-      vpc_security_group_ids = "default"
+      vpc_security_group_ids = "allow-ntg"
     }
     catalogue={
       name ="catalogue"
       instance_type = "t3.small"
-      vpc_security_group_ids = "default"
+      vpc_security_group_ids = "allow-ntg"
     }
     user={
       name ="user"
       instance_type = "t3.small"
-      vpc_security_group_ids = "default"
+      vpc_security_group_ids = "allow-ntg"
     }
     cart={
       name ="cart"
       instance_type = "t3.small"
-      vpc_security_group_ids = "default"
+      vpc_security_group_ids = "allow-ntg"
     }
     redis={
       name ="redis"
@@ -45,12 +45,12 @@ variable "components" {
     mysql={
       name ="mysql"
       instance_type = "t3.small"
-      vpc_security_group_ids = "default"
+      vpc_security_group_ids = "allow-ntg"
     }
     shipping={
       name ="shipping"
       instance_type = "t3.small"
-      vpc_security_group_ids = "default"
+      vpc_security_group_ids = "allow-ntg"
     }
     rabbitmq={
       name ="rabbitmq"
