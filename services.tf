@@ -68,7 +68,9 @@ variable "components" {
 data "aws_security_group" "allow-all" {
   name = "allow-all"
 }
-
+data "aws_security_group" "allow-ntg" {
+  name = "allow-ntg"
+}
 
 data "aws_ami" "centos" {
   most_recent      = true
