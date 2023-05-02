@@ -63,7 +63,7 @@ data "aws_security_group" "allow-all" {
 data "aws_ami" "centos" {
   most_recent      = true
   name_regex       = "Centos-8-DevOps-Practice"
-  owners           = "973714476881"
+  owners           = ["973714476881"]
 }
 
 
