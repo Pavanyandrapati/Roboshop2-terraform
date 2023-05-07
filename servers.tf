@@ -7,21 +7,26 @@ resource "aws_instance" "instance" {
   tags = {
     Name = each.value["name"]
   }
-provisioner "remote-exec" {
+}
+
+resource "null_resource" "provisioner" {
+  for_each = var.components
+  depends_on = [aws_instance.instance,aws_route53_record.records]
+  provisioner "remote-exec" {
 
     connection {
       type     = "ssh"
       user     = "centos"
       password = "DevOps321"
-      host     = self.private_ip
+      host     =aws_instance.instance[each.value["name"]].private_ip
     }
-      inline = [
-        "rm-rf Roboshop2",
-        "git clone https://github.com/Pavanyandrapati/Roboshop2",
-        "cd Roboshop2",
-        "sudo bash ${each.value["name"]}.sh"
-      ]
-    }
+    inline = [
+      "rm-rf Roboshop2",
+      "git clone https://github.com/Pavanyandrapati/Roboshop2",
+      "cd Roboshop2",
+      "sudo bash ${each.value["name"]}.sh"
+    ]
+  }
 }
 
 
