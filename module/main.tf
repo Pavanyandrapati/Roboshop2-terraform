@@ -33,6 +33,6 @@ resource "aws_route53_record" "records" {
   name    = "${var.components_name}-dev.pavan345.online"
   type    = "A"
   ttl     = 30
-  records = [aws_instance.instance[var.components_name].private_ip]
+  records = [aws_instance.instance.private_ip]
 }
 
