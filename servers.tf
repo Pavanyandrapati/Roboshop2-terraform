@@ -5,7 +5,7 @@ resource "aws_instance" "instance" {
   instance_type = each.value["instance_type"]
 
   tags = {
-    Name = "each.value["name"]
+    Name = each.value["name"]
   }
 }
 
