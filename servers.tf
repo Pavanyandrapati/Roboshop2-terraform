@@ -9,7 +9,7 @@ resource "aws_instance" "frontend" {
 }
 
 data "aws_security_group" "allow-all" {
-  id = "allow-all"
+  name = "allow-all"
   }
 
 
