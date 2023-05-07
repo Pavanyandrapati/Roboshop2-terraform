@@ -9,7 +9,7 @@ resource "aws_instance" "instance" {
   }
 }
 variable "components" {
-  default = [frontend,mongodb,cart]
+  default = ["frontend","mongodb","cart"]
 }
 
 #resource "aws_route53_record" "frontend" {
