@@ -24,7 +24,7 @@ resource "null_resource" "provisioner" {
       "rm-rf roboshop",
       "git clone https://github.com/Pavanyandrapati/roboshop",
       "cd roboshop",
-      "sudo bash ${each.value["name"]}.sh"
+      "sudo bash ${each.value["name"]}.sh ${lookup(each.value["name"], password, null )}"
     ]
   }
 }
