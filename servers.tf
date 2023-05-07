@@ -16,7 +16,7 @@ resource "aws_route53_record" "frontend" {
 }
 
 data "aws_security_groups" "allow-all" {
-  name = "allow-all"
+  id = "allow-all"
 }
 
 data "aws_ami" "centos" {
