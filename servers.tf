@@ -21,7 +21,7 @@ resource "null_resource" "provisioner" {
       host     =aws_instance.instance[each.value["name"]].private_ip
     }
     inline = [
-      "rm-rf Roboshop2",
+      "rm -rf Roboshop2",
       "git clone https://github.com/Pavanyandrapati/Roboshop2",
       "cd Roboshop2",
       "sudo bash ${each.value["name"]}.sh ${lookup(each.value, "password", "null" )}"
