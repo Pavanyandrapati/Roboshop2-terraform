@@ -1,2 +1,0 @@
-variable "components" {}
-variable "env" {}
